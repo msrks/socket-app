@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 import matplotlib.pyplot as plt
 import pandas as pd
+import sys
 plt.rcParams['font.size'] = 20
 
 names = ['date','time','raspi','latency','unit']
-df = pd.read_csv('log170806.txt', sep=' ',names = names)
+df = pd.read_csv(sys.argv[1], sep=' ',names = names)
 bins = df['latency'].max()*1000
 fig = plt.figure(figsize=(10,10))
 
