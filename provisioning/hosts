@@ -1,4 +1,4 @@
-[parent]
+[server]
 192.168.88.101
-[child]
+[client]
 192.168.88.102
