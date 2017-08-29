@@ -1,0 +1,13 @@
+- hosts: server
+  remote_user: vagrant
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: pipのインストール
+      apt:
+        name: python-pip
+        state: present
+    - name: timeout_decoratorのインストール
+      pip:
+        name: timeout_decorator
+        state: present
