@@ -1,4 +1,8 @@
-# -*- coding: utf-8 -*-
+"""
+usage:
+$ python plot_latency.py <logfile>
+$ python plot_latency.py log170829.txt
+"""
 import matplotlib.pyplot as plt
 import pandas as pd
 import sys

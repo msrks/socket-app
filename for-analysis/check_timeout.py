@@ -1,3 +1,8 @@
+"""
+usage:
+$ python check_timeout.py <logfile>
+$ python check_timeout.py log170829.txt
+"""
 import pandas as pd
 import sys
 
