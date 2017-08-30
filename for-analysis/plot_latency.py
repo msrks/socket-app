@@ -9,7 +9,7 @@ import sys
 plt.rcParams['font.size'] = 20
 
 names = ['date', 'time', 'raspi', 'latency', 'unit']
-df = pd.read_csv(sys.argv[1], sep=' ', names = names)
+df = pd.read_csv(sys.argv[1], sep=' ', names=names, header=0)
 bins = df['latency'].max()*1000
 fig = plt.figure(figsize=(10,10))
 
