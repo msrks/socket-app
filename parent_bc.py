@@ -20,7 +20,7 @@ interval = float(sys.argv[3]) # 0.1
 while True:
     sleep(interval)
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    now = datetime.now().strftime("%Y/%m/%d %H:%M:%S")
+    now = datetime.now().strftime("%Y/%m/%d %H:%M:%S.%f")
 
     s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
     s.bind(('', src_port))
