@@ -1,6 +1,4 @@
 import socket
-from datetime import datetime
-from time import sleep
 import subprocess
 
 src_port = 10002
