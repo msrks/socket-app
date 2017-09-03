@@ -1,11 +1,15 @@
-# -*- coding: utf-8 -*-
+"""
+usage:
+$ python plot_latency.py <logfile>
+$ python plot_latency.py log170829.txt
+"""
 import matplotlib.pyplot as plt
 import pandas as pd
 import sys
 plt.rcParams['font.size'] = 20
 
 names = ['date', 'time', 'raspi', 'latency', 'unit']
-df = pd.read_csv(sys.argv[1], sep=' ', names = names)
+df = pd.read_csv(sys.argv[1], sep=' ', names=names, header=0)
 bins = df['latency'].max()*1000
 fig = plt.figure(figsize=(10,10))
 

@@ -1,8 +1,13 @@
+"""
+usage:
+$ python check_timeout.py <logfile>
+$ python check_timeout.py log170829.txt
+"""
 import pandas as pd
 import sys
 
 names = ['date', 'time', 'raspi', 'latency', 'unit']
-df = pd.read_csv(sys.argv[1], sep=' ', names = names)
+df = pd.read_csv(sys.argv[1], sep=' ', names=names, header=0)
 df = df.dropna()
 
 time_list = list(df['time'].unique())

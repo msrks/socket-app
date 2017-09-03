@@ -1,0 +1,21 @@
+- hosts: all
+  remote_user: vagrant
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: pipのインストール
+      apt:
+        name: python-pip
+        state: present
+    - name: timeout_decoratorのインストール
+      pip:
+        name: timeout_decorator
+        state: present
+    - name: gitのインストール
+      apt:
+        name: git
+    - name: 最新のレポジトリを取ってくる
+      git:
+        repo: https://github.com/msrks/socket-app.git
+        dest: ~
+        update: yes
