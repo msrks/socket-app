@@ -18,7 +18,6 @@ num_children = int(sys.argv[2]) # 16
 interval = float(sys.argv[3]) # 0.1
 
 while True:
-    sleep(interval)
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     now = datetime.now().strftime("%Y/%m/%d %H:%M:%S.%f")[:-3]
 
@@ -39,5 +38,7 @@ while True:
     except StopIteration:
         print "timeout!!!!!"
         print ""
+        sleep(interval)
     else:
         print ""
+        sleep(interval)
