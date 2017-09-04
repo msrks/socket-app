@@ -8,9 +8,14 @@ import sys
 
 names = ['date', 'time', 'raspi', 'latency', 'unit']
 df = pd.read_csv(sys.argv[1], sep=' ', names=names, header=0)
+
+time_list=[]
+for i in range(len(df)):
+    if df['date'][i] == 'timeout!!!!!':
+        time_list.append(df['time'][i-1])
+
 df = df.dropna()
 
-time_list = list(df['time'].unique())
 raspi_list = list(df['raspi'].unique())
 
 print('num. of timeout:')
