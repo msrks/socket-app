@@ -40,9 +40,11 @@ while True:
     except StopIteration:
         print "timeout!!!!!"
         print ""
-        sleeptime = time() - start
+        response_time = time() - start
+        sleeptime = interval - responce_time
         sleep(sleeptime)
     else:
         print ""
-        sleeptime = time() - start
+        response_time = time() - start
+        sleeptime = interval - response_time
         sleep(sleeptime)
