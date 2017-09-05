@@ -28,6 +28,13 @@ $ python parent_bc.py <dst-ip> <num-child> <interval>
 $ python parent_bc.py 192.168.88.255 16 0.1
 ```
 
+- parent_bc_exact_polling.py
+
+```
+$ python parent_bc_exact_polling.py <dst-ip> <num-child> <interval>
+$ python parent_bc_exact_polling.py 192.168.88.255 16 0.1
+```
+
 - parent_uc.py
 
 ```
