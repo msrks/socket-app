@@ -12,6 +12,8 @@ import timeout_decorator
 src_port = 30000
 dst_port = 10002
 msg = "toooooooooooooooooooooth!"*12
+len_payload = 68
+msg = msg[:len_payload]
 
 dst_ip = sys.argv[1] # "192.168.88.255"
 num_children = int(sys.argv[2]) # 16

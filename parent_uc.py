@@ -11,6 +11,8 @@ import timeout_decorator
 
 dst_port = 10002
 msg = "toooooooooooooooooooooth!"*12
+len_payload = 68
+msg = msg[:len_payload]
 
 dst_ip = sys.argv[1] # "192.168.88.1"
 src_port = int(sys.argv[2]) # 30003
