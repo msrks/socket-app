@@ -42,7 +42,7 @@ while True:
         print "timeout!!!!!"
         print ""
         response_time = time() - start
-        sleeptime = interval - responce_time
+        sleeptime = interval - response_time
         sleep(sleeptime)
     else:
         print ""
