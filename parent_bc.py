@@ -39,8 +39,6 @@ while True:
         rcv_packets()
     except StopIteration:
         print "timeout!!!!!"
-        print ""
-        sleep(interval)
-    else:
+    finally:
         print ""
         sleep(interval)
