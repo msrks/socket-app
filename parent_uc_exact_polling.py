@@ -1,7 +1,7 @@
 """
 usage:
-$ python parent_uc.py <dst-ip> <src-port> <interval>
-$ python parent_uc.py 192.168.88.102 30003 0.1
+$ python parent_uc_exact_polling.py <dst-ip> <src-port> <interval>
+$ python parent_uc_exact_polling.py 192.168.88.102 30003 0.1
 """
 import socket
 from datetime import datetime
@@ -17,6 +17,7 @@ msg = msg[:len_payload]
 dst_ip = sys.argv[1] # "192.168.88.1"
 src_port = int(sys.argv[2]) # 30003
 interval = float(sys.argv[3]) # 0.1
+timelimit = 0.9
 
 while True:
 
@@ -27,7 +28,7 @@ while True:
     s.sendto(msg, (dst_ip, dst_port))
     start = time()
 
-    @timeout_decorator.timeout(5, timeout_exception=StopIteration)
+    @timeout_decorator.timeout(timelimit, timeout_exception=StopIteration)
     def rcv_packets():
         r = s.recv(4096)
         stop = time()
@@ -39,4 +40,6 @@ while True:
         print "timeout!!!!!"
     finally:
         print ""
-        sleep(interval)
+        response_time = time() - start
+        sleeptime = interval - response_time
+        sleep(sleeptime)
