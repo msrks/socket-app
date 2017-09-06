@@ -17,6 +17,8 @@ for i in range(len(df)):
 df = df.dropna()
 
 raspi_list = list(df['raspi'].unique())
+num_bc = len(list(df['time'].unique()))
+print('num. of bc = ', num_bc)
 
 print('num. of timeout:')
 for name in raspi_list:
