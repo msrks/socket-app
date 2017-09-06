@@ -11,7 +11,7 @@ import timeout_decorator
 
 dst_port = 10002
 msg = "toooooooooooooooooooooth!"*12
-len_payload = 68-14-20-8-4 # eth16 ip20 udp8 fcs4
+len_payload = 68-14-20-8-4 # eth14 ip20 udp8 fcs4
 msg = msg[:len_payload]
 
 dst_ip = sys.argv[1] # "192.168.88.1"
