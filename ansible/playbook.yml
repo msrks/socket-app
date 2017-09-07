@@ -1,0 +1,15 @@
+- hosts: child
+  remote_user: pi
+  become: no
+  gather_facts: no
+  tasks:
+    - name: child.pyファイルを配布する
+      copy: 
+        src="../child.py"
+        dest="~/child.py"
+    - name: cron.confファイルを配布する
+      copy:
+        src="../cron.conf"
+        dest="~/cron.conf"
+    - name: crontabにジョブを登録する
+      shell: crontab cron.conf

@@ -1,0 +1,22 @@
+- hosts: child
+  remote_user: pi
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: IPv6を無効化
+      copy:
+        src="sysctl.conf"
+        dest="/etc/sysctl.conf"
+    - name: NTPデーモンの停止
+      shell: systemctl stop ntp
+    - name: NTPデーモンの自動起動停止
+      shell: systemctl disable ntp
+    - name: MDNSデーモンの削除
+      apt:
+        name: avahi-daemon
+        state: absent
+    - name: rebootする
+      shell: shutdown -r +1
+      async: 0
+      poll: 0
+      ignore_errors: true

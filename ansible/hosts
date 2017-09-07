@@ -1,0 +1,7 @@
+[child]
+192.168.11.[111:118] ansible_ssh_user=pi ansible_ssh_pass=raspberry
+192.168.11.120 ansible_ssh_user=pi ansible_ssh_pass=raspberry
+192.168.11.[141:160] ansible_ssh_user=pi ansible_ssh_pass=raspberry
+192.168.11.167 ansible_ssh_user=pi ansible_ssh_pass=raspberry
+192.168.11.[171:180] ansible_ssh_user=pi ansible_ssh_pass=raspberry
+192.168.11.[186:191] ansible_ssh_user=pi ansible_ssh_pass=raspberry
