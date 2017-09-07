@@ -47,3 +47,7 @@ $ python parent_uc.py 192.168.88.102 30003 0.1
 ```
 $ python child.py
 ```
+
+## [Deploy Automation](ansible/)
+
+## [How To Contribute](CONTRIBUTING.md)

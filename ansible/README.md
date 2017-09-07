@@ -1,5 +1,9 @@
 ## ansibleによるデブロイ自動化手順
 
+### 0. macにansible環境を構築
+
+http://qiita.com/msrks/items/e0de2931ef726448696d
+
 ### 1. playbookを実行する
 
 下記コマンンドを実行する
