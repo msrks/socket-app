@@ -29,18 +29,22 @@ while True:
     s.sendto(msg, (dst_ip, dst_port))
     start = time()
 
+　　log_message = ""
+    
     @timeout_decorator.timeout(timelimit, timeout_exception=StopIteration)
     def rcv_packets():
         for i in range(num_children):
             r = s.recv(4096)
             stop = time()
-            print now, r[:9], round(stop-start, 3), "s"
+            _log = now + " " + r[:9] + " " + round(stop-start, 3) + " s\n"
+            log_message += _log
 
     try:
         rcv_packets()
     except StopIteration:
         print "timeout!!!!!"
     finally:
+        print log_message
         print ""
         response_time = time() - start
         sleeptime = interval - response_time
