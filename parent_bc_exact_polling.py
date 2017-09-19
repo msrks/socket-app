@@ -1,3 +1,4 @@
+#! -*- coding: utf-8 -*-
 """
 usage:
 $ python parent_bc_exact_polling.py <dst-ip> <num-child> <interval>
@@ -29,22 +30,21 @@ while True:
     s.sendto(msg, (dst_ip, dst_port))
     start = time()
 
-　　log_message = ""
-    
     @timeout_decorator.timeout(timelimit, timeout_exception=StopIteration)
     def rcv_packets():
+        log_message = ""
         for i in range(num_children):
             r = s.recv(4096)
             stop = time()
-            _log = now + " " + r[:9] + " " + round(stop-start, 3) + " s\n"
+            _log = now + " " + r[:9] + " " + str(round(stop-start, 3)) + " s\n"
             log_message += _log
+        print log_message
 
     try:
         rcv_packets()
     except StopIteration:
-        log_message += "timeout!!!!!\n"
+        print "timeout!!!!!\n"
     finally:
-        print log_message
         response_time = time() - start
         sleeptime = interval - response_time
         sleep(sleeptime)
