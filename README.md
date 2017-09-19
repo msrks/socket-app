@@ -4,7 +4,9 @@ for Network Test using RPI
 
 ## Requirements
 
-timeout_decorator
+#### Python 2.7
+
+#### timeout_decorator
 
 - ubuntu, raspbian
 
