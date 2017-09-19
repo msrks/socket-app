@@ -42,10 +42,9 @@ while True:
     try:
         rcv_packets()
     except StopIteration:
-        print "timeout!!!!!"
+        log_message += "timeout!!!!!\n"
     finally:
         print log_message
-        print ""
         response_time = time() - start
         sleeptime = interval - response_time
         sleep(sleeptime)
