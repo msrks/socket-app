@@ -59,3 +59,12 @@ $ git checkout <branch-name>
 $ git push origin <branch-name>
 ```
 
+開発が終了して完全にmergeされたブランチを削除する
+
+```
+#ローカルブランチの削除
+$ git branch -d <branch-name> 
+
+#リモートブランチの削除
+$ git push --delete origin <branch-name>
+```
