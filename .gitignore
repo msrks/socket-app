@@ -2,3 +2,4 @@
 .vagrant/
 
 *.retry
+.python-version
