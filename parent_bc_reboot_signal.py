@@ -9,7 +9,7 @@ from time import sleep
 import sys
 
 dst_ip = sys.argv[1] # "192.168.0.255"
-dst_port = 10002
+dst_port = 20001
 interval = float(sys.argv[2]) # 0.1
 
 msg = b'\x00\x1a\x01\xe1\x0a\x0b\x0c\x0d\x0e\x0f\x00\x00\x09\x99\xe3\x00\x46\x55\x01\x00\x00\x00\x00\x00\x00\x01'
